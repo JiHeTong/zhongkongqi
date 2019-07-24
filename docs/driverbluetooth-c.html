@@ -1,0 +1,823 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>driver_bluetooth.c · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="driverbluetooth-h.html" />
+    
+    
+    <link rel="prev" href="dev_uartlogo-h.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="名词术语.html">
+            
+                <a href="名词术语.html">
+            
+                    
+                    名词术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">文件说明</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="dev_uartlogo-c.html">
+            
+                <a href="dev_uartlogo-c.html">
+            
+                    
+                    dev_uartlogo.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="dev_uartlogo-h.html">
+            
+                <a href="dev_uartlogo-h.html">
+            
+                    
+                    dev_uartlogo.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="driverbluetooth-c.html">
+            
+                <a href="driverbluetooth-c.html">
+            
+                    
+                    driver_bluetooth.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="driverbluetooth-h.html">
+            
+                <a href="driverbluetooth-h.html">
+            
+                    
+                    driver_bluetooth.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="drivercomm-c.html">
+            
+                <a href="drivercomm-c.html">
+            
+                    
+                    driver_comm.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="drivercomm-h.html">
+            
+                <a href="drivercomm-h.html">
+            
+                    
+                    driver_comm.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="drivergprs-c.html">
+            
+                <a href="drivergprs-c.html">
+            
+                    
+                    driver_gprs.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="drivergprs-h.html">
+            
+                <a href="drivergprs-h.html">
+            
+                    
+                    driver_gprs.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="driverlock-c.html">
+            
+                <a href="driverlock-c.html">
+            
+                    
+                    driver_lock.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="driverlock-h.html">
+            
+                <a href="driverlock-h.html">
+            
+                    
+                    driver_lock.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="drivertimer-c.html">
+            
+                <a href="drivertimer-c.html">
+            
+                    
+                    driver_timer.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="drivertimer-h.html">
+            
+                <a href="drivertimer-h.html">
+            
+                    
+                    driver_timer.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="driverupgrade-c.html">
+            
+                <a href="driverupgrade-c.html">
+            
+                    
+                    driver_upgrade.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="driverupgrade-h.html">
+            
+                <a href="driverupgrade-h.html">
+            
+                    
+                    driver_upgrade.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="SinRTC-c.html">
+            
+                <a href="SinRTC-c.html">
+            
+                    
+                    SinRTC.c
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="SinRTC-h.html">
+            
+                <a href="SinRTC-h.html">
+            
+                    
+                    SinRTC.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="devflash-h.html">
+            
+                <a href="devflash-h.html">
+            
+                    
+                    driver_iic_check.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >driver_bluetooth.c</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h1>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x84DD;&#x7259;&#x65B9;&#x9762;&#x7684;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x63A5;&#x6536;\&#x53D1;&#x9001;&#x84DD;&#x7259;&#x6570;&#x636E;&#xFF0C;&#x89E3;&#x6790;&#x84DD;&#x7259;&#x6570;&#x636E;&#x7B49;&#x7B49;</p>
+<hr>
+<h1 id="&#x5185;&#x90E8;&#x5168;&#x5C40;&#x53D8;&#x91CF;">&#x5185;&#x90E8;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">chUartBuf[]</td>
+<td style="text-align:left">uinit8_t</td>
+<td style="text-align:left">&#x84DD;&#x7259;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7F13;&#x51B2;&#x533A;</td>
+</tr>
+<tr>
+<td style="text-align:left">chUartBufHead</td>
+<td style="text-align:left">uint32_t</td>
+<td style="text-align:left">&#x7F13;&#x51B2;&#x533A;&#x5B57;&#x7B26;&#x4E32;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td style="text-align:left">chUartBufEnd</td>
+<td style="text-align:left">uint32_t</td>
+<td style="text-align:left">&#x7F13;&#x51B2;&#x533A;&#x6CA1;&#x63A5;&#x6536;&#x5230;&#x6570;&#x636E;&#x7684;&#x6807;&#x5FD7;&#x4F4D;0</td>
+</tr>
+<tr>
+<td style="text-align:left">chUartTimeout</td>
+<td style="text-align:left">uint32_t</td>
+<td style="text-align:left">&#x84DD;&#x7259;&#x63A5;&#x6536;&#x6570;&#x636E;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td style="text-align:left">blue_mac_data[]</td>
+<td style="text-align:left">uint8_t</td>
+<td style="text-align:left">&#x84DD;&#x7259;mac&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td style="text-align:left">BT_status_led</td>
+<td style="text-align:left">uint8_t</td>
+<td style="text-align:left">&#x84DD;&#x7259;&#x72B6;&#x6001;&#x706F;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="&#x5916;&#x90E8;&#x5168;&#x5C40;&#x53D8;&#x91CF;">&#x5916;&#x90E8;&#x5168;&#x5C40;&#x53D8;&#x91CF;</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x6240;&#x5C5E;&#x6587;&#x4EF6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">system_para</td>
+<td style="text-align:left">SYSTEM_PARA&#xFF08;&#x7ED3;&#x6784;&#x4F53;&#xFF09;</td>
+<td style="text-align:left">&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x4FE1;&#x606F;</td>
+<td style="text-align:left">driver_upgrade.c</td>
+</tr>
+<tr>
+<td style="text-align:left">term_line_data</td>
+<td style="text-align:left">TERM_LINE_LIST</td>
+<td style="text-align:left">&#x68C0;&#x6D4B;&#x677F;&#x53C2;&#x6570;&#x4FE1;&#x606F;</td>
+<td style="text-align:left">driver_upgrade.c</td>
+</tr>
+<tr>
+<td style="text-align:left">Enter_sleep_flag</td>
+<td style="text-align:left">uinit8_t</td>
+<td style="text-align:left">&#x4F11;&#x7720;&#x6807;&#x5FD7;</td>
+<td style="text-align:left">main.c</td>
+</tr>
+<tr>
+<td style="text-align:left">flag_module_start</td>
+<td style="text-align:left">uinit8_t</td>
+<td style="text-align:left">&#x8BBE;&#x5907;&#x542F;&#x52A8;&#x6807;&#x5FD7;</td>
+<td style="text-align:left">driver_comm.c</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="&#x5B8F;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;">&#x5B8F;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;</h1>
+<p><strong>&#x8BF4;&#x660E;&#xFF1A;&#x4EE5;&#x4E0B;&#x53D8;&#x91CF;&#x90FD;&#x662F;16&#x8FDB;&#x5236;u8&#x7C7B;&#x578B;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BLUE_RECE_PACK_HEAD</td>
+<td style="text-align:left">&#x63A5;&#x6536;&#x6570;&#x636E;&#x5934;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_SEND_PACK_HEAD</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x5934;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_PACK_CRC</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x5C3E;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_UPLPAD_LINE_STATUS</td>
+<td style="text-align:left">&#x4E0A;&#x62A5;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5B50;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_GET_LINE_STATUS</td>
+<td style="text-align:left">&#x67E5;&#x8BE2;&#x7AEF;&#x5B50;&#x5360;&#x7528;&#x60C5;&#x51B5;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_MAC</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;mac&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_TEMP_VALUE</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x6E29;&#x5EA6;&#x9608;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_OTHER_VALUE</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x5176;&#x4ED6;&#x9608;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_IP</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;ip</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_PORT</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_NAME</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x84DD;&#x7259;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_GET_MAC</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x84DD;&#x7259;mac</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_OPEN_LOCK</td>
+<td style="text-align:left">&#x5F00;&#x9501;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_TIME</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_GET_PARA</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x8BBE;&#x5907;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_ADD_LINE</td>
+<td style="text-align:left">&#x7ED1;&#x5B9A;&#x68C0;&#x6D4B;&#x677F;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_DEL_LINE</td>
+<td style="text-align:left">&#x89E3;&#x9664;&#x68C0;&#x6D4B;&#x677F;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_RESET_LINE</td>
+<td style="text-align:left">&#x91CD;&#x65B0;&#x68C0;&#x67E5;&#x5DF2;&#x7ED1;&#x5B9A;&#x5728;&#x4F4D;&#x7684;&#x68C0;&#x6D4B;&#x677F;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_SET_LINESIDE</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x68C0;&#x6D4B;&#x677F;&#x65B9;&#x5411;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_RESET_CONTROLLER</td>
+<td style="text-align:left">&#x590D;&#x4F4D;&#x91CD;&#x542F;&#x4E2D;&#x63A7;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_GET_VER</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E2D;&#x63A7;&#x7248;&#x672C;&#x53F7;&#x548C;&#x7248;&#x672C;&#x65E5;&#x671F;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_GET_NET_STA</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x4E2D;&#x63A7;&#x7248;&#x672C;&#x5F53;&#x524D;&#x7F51;&#x7EDC;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:left">BLUE_CMD_INIT_LINE</td>
+<td style="text-align:left">&#x6062;&#x590D;&#x68C0;&#x6D4B;&#x677F;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="&#x5916;&#x90E8;&#x51FD;&#x6570;">&#x5916;&#x90E8;&#x51FD;&#x6570;</h1>
+<p>&#x5FAE;&#x79D2;&#x5EF6;&#x65F6;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">delay_us</span><span class="hljs-params">(u16 us)</span></span>;
+</code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;main.c</p>
+<hr>
+<p>&#x6BEB;&#x79D2;&#x5EF6;&#x65F6;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">delay_ms</span><span class="hljs-params">(u16 ms)</span></span>;
+</code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;main.c</p>
+<hr>
+<p>&#x770B;&#x95E8;&#x72D7;&#x91CD;&#x7F6E;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SinWatchDog_Reset</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>;
+</code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;driver_timer.c</p>
+<hr>
+<p>&#x8BBE;&#x7F6E;usb&#x8FDE;&#x63A5;&#x6807;&#x5FD7;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_usb_connect_flag</span><span class="hljs-params">(u8 flag)</span></span>;
+</code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;main.c</p>
+<hr>
+<p>&#x767B;&#x9646;&#x5931;&#x8D25;&#x6761;&#x4EF6;&#x542F;&#x52A8;&#x91CD;&#x53D1;&#x767B;&#x9646;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">check_net_sta_send_data</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span></code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;driver_comm.c</p>
+<hr>
+<p>&#x6253;&#x5370;log</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print_logo</span><span class="hljs-params">(u8 logo_s,u8 *remind,u8 *data,u16 len,u8 logo_type)</span></span>;
+</code></pre>
+<p>&#x6240;&#x5C5E;&#x6587;&#x4EF6;&#xFF1A;dev_uartlogo.c</p>
+<hr>
+<h1 id="&#x5185;&#x90E8;&#x51FD;&#x6570;">&#x5185;&#x90E8;&#x51FD;&#x6570;</h1>
+<p>&#x84DD;&#x7259;&#x4E32;&#x53E3;&#x521D;&#x59CB;&#x5316;&#xFF0C;BR&#x4E3A;&#x6CE2;&#x7279;&#x7387;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">system_sc_uart2_init</span><span class="hljs-params">(u32 BR)</span>
+</span></code></pre>
+<hr>
+<p>&#x84DD;&#x7259;&#x4E32;&#x53E3;&#x4E2D;&#x65AD;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x6536;&#x6570;&#x636E;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SC2_IRQHandler</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span></code></pre>
+<hr>
+<p>&#x5C06;16&#x8FDB;&#x5236;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;ascii&#x7801;</p>
+<pre><code class="lang-c"><span class="hljs-function">u8  <span class="hljs-title">hex_to_ascii</span><span class="hljs-params">(u8 hex)</span>
+</span></code></pre>
+<hr>
+<p>&#x5C06;ascii&#x7801;&#x8F6C;&#x6362;&#x6210;16&#x8FDB;&#x5236;&#x6570;&#x636E;</p>
+<pre><code class="lang-c"><span class="hljs-function">u8  <span class="hljs-title">ascii_to_hex</span><span class="hljs-params">(u8 ascii)</span>
+</span></code></pre>
+<hr>
+<p>&#x5C06;16&#x8FDB;&#x5236;&#x6570;&#x636E;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x6210;ascii&#x6570;&#x7EC4;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">hex_to_hascii</span><span class="hljs-params">(u8 *h_ascii,u8 *hex_data,u8 len)</span>
+</span></code></pre>
+<hr>
+<p>&#x6DFB;&#x52A0;&#x6BCF;&#x4E2A;&#x68C0;&#x6D4B;&#x677F;&#x72B6;&#x6001;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add_blue_one_line_status</span><span class="hljs-params">(u8 *status,u8 *sendbuff,u16 *sendlen)</span>
+</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">&#x72B6;&#x6001;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:left">sendbuff</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x7F13;&#x51B2;&#x533A;</td>
+</tr>
+<tr>
+<td style="text-align:left">sendlen</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x957F;&#x5EA6;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>&#x8BBE;&#x7F6E;&#x6E29;&#x5EA6;&#x9608;&#x503C;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_temp_value</span><span class="hljs-params">(u8 *data)</span>
+</span></code></pre>
+<hr>
+<p>&#x8BBE;&#x7F6E;&#x5176;&#x4ED6;&#x9608;&#x503C;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_value_envi</span><span class="hljs-params">(u8 *data)</span>
+</span></code></pre>
+<hr>
+<p>&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x4FE1;&#x606F;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_term_para</span><span class="hljs-params">(u8 *data,u16 *datalen)</span>
+</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x7684;&#x7F13;&#x51B2;&#x533A;</td>
+</tr>
+<tr>
+<td style="text-align:left">datalen</td>
+<td style="text-align:left">&#x53C2;&#x6570;&#x7684;&#x957F;&#x5EA6;&#x5730;&#x5740;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>&#x83B7;&#x53D6;&#x4E2D;&#x63A7;&#x7248;&#x672C;&#x53F7;&#x548C;&#x7248;&#x672C;&#x65E5;&#x671F;&#xFF0C;&#x53C2;&#x6570;&#x540C;&#x4E0A;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_term_ver</span><span class="hljs-params">(u8 *data,u16 *datalen)</span>
+</span></code></pre>
+<hr>
+<p>&#x84DD;&#x7259;&#x89E3;&#x9501;&#x72B6;&#x6001;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">blue_unlock_status</span><span class="hljs-params">(u8 lock_type,u8 *sendbuff,u16 *sendlen)</span>
+</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lock_type</td>
+<td style="text-align:left">&#x9501;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:left">sendbuff</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x7F13;&#x51B2;&#x533A;</td>
+</tr>
+<tr>
+<td style="text-align:left">sendlen</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x5730;&#x5740;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>&#x5411;&#x84DD;&#x7259;&#x8BBE;&#x5907;&#x53D1;&#x9001;&#x6570;&#x636E;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">send_blue_cmd_data</span><span class="hljs-params">(u8 cmd,u8 *data,u16 datalen)</span>
+</span></code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53D8;&#x91CF;&#x540D;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cmd</td>
+<td style="text-align:left">&#x547D;&#x4EE4;&#x6807;&#x5FD7;</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td style="text-align:left">datalen</td>
+<td style="text-align:left">&#x6570;&#x636E;&#x957F;&#x5EA6;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="dev_uartlogo-h.html" class="navigation navigation-prev " aria-label="Previous page: dev_uartlogo.h">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="driverbluetooth-h.html" class="navigation navigation-next " aria-label="Next page: driver_bluetooth.h">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"driver_bluetooth.c","level":"2.3","depth":1,"next":{"title":"driver_bluetooth.h","level":"2.4","depth":1,"path":"driverbluetooth-h.md","ref":"driverbluetooth-h.md","articles":[]},"previous":{"title":"dev_uartlogo.h","level":"2.2","depth":1,"path":"dev_uartlogo-h.md","ref":"dev_uartlogo-h.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"driverbluetooth-c.md","mtime":"2019-07-08T15:51:56.687Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-24T09:51:05.050Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
